@@ -1,0 +1,6 @@
+<ng-container *ngIf="temp && temp.day  else render">
+  {{temp.day}}
+</ng-container>
+<ng-template #render>
+  {{ temp }}
+</ng-template>

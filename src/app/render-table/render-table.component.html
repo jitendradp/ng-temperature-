@@ -1,0 +1,22 @@
+<div class="row" *ngIf="content.type">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">City Name</th>
+          <th scope="col">Temperater</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of content.temp;let index = index">
+          <tr *ngIf="(index % 3 == 0 && content.type == searchType.HOURLY) || searchType.DAILY  == content.type">
+            <th scope="row">#</th>
+            <td>{{content.name}}</td>
+            <td>
+                <app-render-column [temp]="item.temp"></app-render-column>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
